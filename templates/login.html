@@ -1,0 +1,798 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <!------ Font Awesome ------>
+	<style>
+	form {
+        border: 3px solid #f1f1f1;
+    }
+    /*assign full width inputs*/
+      
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    /*set a style for the buttons*/
+      
+    button {
+        background-color:var(--base-shade-1);;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+    /* set a hover effect for the button*/
+      
+    button:hover {
+        opacity: 0.8;
+    }
+    /*set extra style for the cancel button*/
+      
+    /*centre the display image inside the container*/
+      
+    /*set image properties*/
+
+    /*set padding to the container*/
+      
+    .container {
+        padding: 16px;
+    }
+    /*set the forgot password text*/
+      
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    /*------ Variables ------*/
+:root {
+  --base-shade-1: 	#30265c;
+  --white-shade-1: #ffffff;
+  --white-shade-2: #d7e1f3;
+  --black-shade-1: #232323;
+  --black-shade-2: #676a8b;
+  --grad-color-1: 255,208,208;
+  --grad-color-2: 48,38,92;
+ 
+  --base-font-size: 1.6rem;
+
+  --heading-font-size-1: 4rem;
+  --heading-font-size-2: 3.2rem;
+  --heading-font-size-3: 2rem;
+  --heading-font-size-4: 1.8rem;
+
+  --border-radius-1: 1rem;
+  --border-radius-2: 0.5rem;
+}
+/*------ Base Styles ------*/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:not(i) {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+/*------ Utility Classes ------*/
+
+section,
+footer {
+  padding: 9rem 5rem;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+.column {
+  width: 100%;
+}
+.section-desc {
+  text-align: center;
+  margin: 2rem 0 6rem 0;
+}
+h1 {
+  font-size: var(--heading-font-size-1);
+  color: var(--black-shade-1);
+  margin-bottom: 2rem;
+  word-spacing: 1rem;
+  line-height: 1.6;
+}
+h2 {
+  font-size: var(--heading-font-size-2);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  text-align: center;
+}
+h3 {
+  font-size: var(--heading-font-size-3);
+  color: var(--black-shade-1);
+  font-weight: 700;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+h4 {
+  font-size: var(--heading-font-size-4);
+  color: var(--black-shade-2);
+  margin: 1.5rem 0;
+}
+p,
+button {
+  font-size: var(--base-font-size);
+  color: var(--black-shade-1);
+  line-height: 1.8;
+  font-weight: 400;
+}
+.btn {
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-2);
+  border: none;
+  margin: 2rem 0;
+}
+.primary-btn {
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+}
+.secondary-btn {
+  border: 0.3rem solid var(--base-shade-1);
+  color: var(--base-shade-1);
+}
+
+/*------ Header ------*/
+header {
+  position: fixed;
+  width: 100%;
+  padding: 3rem 5rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  font-size: var(--heading-font-size-4);
+  text-decoration: none;
+}
+nav a#logo {
+  color: var(--black-shade-1);
+  font-weight: 700;
+}
+nav ul a {
+  color: var(--white-shade-1);
+}
+
+/*-- SideMenu --*/
+#ham-menu {
+  display: none;
+}
+nav ul.active {
+  left: 0;
+}
+/*-- Sticky Header --*/
+.sticky {
+  background-color: grey;
+  box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+.sticky nav ul a,
+.sticky nav a#logo,
+.sticky #ham-menu {
+  color: var(--black-shade-1);
+}
+/*-- Link Hover Effect --*/
+nav ul a:hover {
+  color: var(--white-shade-2);
+}
+.sticky nav ul a:hover {
+  color: var(--base-shade-1);
+}
+/*------ Section: Hero ------*/
+section.hero {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  align-items: center;
+}
+#header-shape {
+  position: absolute;
+  top: 0;
+  right: 2;
+  z-index: -5;
+}
+.hero-content p {
+  text-align: justify;
+  color: white;
+}
+.hero-img img {
+  display: block;
+  width: 100%;
+}
+.btn-container {
+  display: flex;
+  gap: 3rem;
+}
+/*------ Section: Features ------*/
+.features .row {
+  align-items: stretch;
+}
+.features .column {
+  padding: 6rem 2rem;
+  border-radius: var(--border-radius-1);
+}
+.features .column p {
+  text-align: center;
+}
+.features h3 {
+  margin: 3rem 0;
+}
+.features i {
+  display: block;
+  height: 6rem;
+  width: 6rem;
+  margin: 0 auto;
+  font-size: 3.5rem;
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+  padding: 1.3rem 0;
+  text-align: center;
+  border-radius: var(--border-radius-2);
+}
+.features .column:hover {
+  background-color: var(--base-shade-1);
+}
+.features .column:hover h3 {
+  color: var(--white-shade-1);
+}
+.features .column:hover p {
+  color: var(--white-shade-2);
+}
+.features .column:hover i {
+  background-color: var(--white-shade-1);
+  color: var(--base-shade-1);
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #00428a;
+  padding: 0 0 30px 0;
+  color: #eee;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: #004a99;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 34px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 13px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  color: #ecf5ff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  color: #fff;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a i {
+  line-height: 0;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #0067d5;
+  color: #fff;
+}
+
+#footer .footer-top h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 8px 0;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #ecf5ff;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #74b5fc;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+#footer .footer-top .footer-newsletter {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-newsletter input[type="email"] {
+  border: 0;
+  padding: 6px 8px;
+  width: 65%;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"] {
+  background: #007bff;
+  border: 0;
+  width: 35%;
+  padding: 6px 0;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#footer .footer-top .footer-newsletter input[type="submit"]:hover {
+  background: #0062cc;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#footer .credits {
+  text-align: center;
+  font-size: 13px;
+  color: #f1f7ff;
+}
+
+#footer .credits a {
+  color: #bfddfe;
+}
+
+#footer .credits a:hover {
+  color: #f1f7ff;
+}
+
+
+
+/*------ Scroll Top Button ------*/
+#scroll-top {
+  position: fixed;
+  display: none;
+  place-items: center;
+  height: 5rem;
+  width: 5rem;
+  right: 3rem;
+  bottom: 3rem;
+  background-color: var(--base-shade-1);
+  color: var(--white-shade-1);
+  border: none;
+  outline: none;
+  font-size: var(--heading-font-size-3);
+  border-radius: var(--border-radius-2);
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  section,
+  footer {
+    padding: 7.5rem 5rem;
+  }
+  header {
+    padding: 2.2rem 5rem;
+  }
+  section.hero {
+    grid-template-columns: 1fr;
+    background: linear-gradient(
+      2deg,
+      rgb(var(--grad-color-1)),
+      rgb(var(--grad-color-2))
+    );
+  }
+  #header-shape {
+    display: none;
+  }
+  .hero-img {
+    grid-row: 1;
+  }
+  nav ul a,
+  nav a#logo {
+    color: var(--white-shade-1);
+  }
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+  .hero-content h1 {
+    color: var(--white-shade-1);
+  }
+  .hero-content p {
+    color: var(--white-shade-1);
+  }
+  /* .hero-content .primary-btn {
+    background-color: var(--white-shade-1);
+    color: var(--base-shade-1);
+  } */
+  .hero-content .secondary-btn {
+    color: var(--white-shade-1);
+    border-color: var(--white-shade-1);
+  }
+  .btn-container {
+    justify-content: center;
+  }
+  .download-app img {
+    width: 30%;
+  }
+  .app-feature div {
+    justify-content: center;
+  }
+  .app-feature p {
+    text-align: center;
+  }
+  .download-app a img {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  header {
+    padding: 2rem 4rem;
+  }
+  #ham-menu {
+    display: block;
+    color: var(--white-shade-1);
+  }
+  nav a#logo,
+  #ham-menu {
+    font-size: var(--heading-font-size-2);
+  }
+  nav ul {
+    background-color: var(--black-shade-1);
+    position: fixed;
+    left: -100vw;
+    top: 70.4px;
+    height: calc(100vh - 70.4px);
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+  }
+  nav ul a {
+    font-size: var(--heading-font-size-3);
+  }
+  .sticky nav ul a {
+    color: var(--white-shade-1);
+  }
+  nav ul a:hover {
+    color: var(--base-shade-1);
+  }
+  #scroll-top {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  header {
+    padding: 2rem 3rem;
+  }
+  section,
+  footer {
+    padding: 7.5rem 3rem;
+  }
+  .features .column {
+    padding: 4rem 2rem;
+  }
+  nav ul {
+    top: 65.18px;
+    height: calc(100vh - 65.18px);
+  }
+}
+
+    /*set styles for span and cancel button on small screens*/
+      
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }</style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    
+    <!------ Google Fonts ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!------ Stylesheet ------>
+    <!-- <link rel="stylesheet" href=".\style_sheet.css" />
+    <!------ Queries 
+    <link rel="stylesheet" href=".\queries.css" /> -->
+  </head>
+  <body>
+    <!------ Scroll To Top Button ------>
+    <button id="scroll-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <!------ Header ------>
+    <header style="background:#2a224f;">
+      <nav>
+        <a href="#home" id="logo" style="color:white;">Vote Securus</a>
+        <i class="fas fa-bars" id="ham-menu"></i>
+        <ul id="nav-bar">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#features">Features</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Contact Us</a>
+          </li>
+          <li>
+            <a href="#login">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+	
+    <!------ Section: Hero ------>
+    <section class="hero" id="home" style="background: linear-gradient( 2deg, rgb(var(--grad-color-1)), rgb(var(--grad-color-2)) );">
+      <img src="" id="header-shape" "/>
+      <div class="hero-content">
+        <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+        <h1 style="color:white">Let's make Voting Simple and Secure</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nihil
+          eum culpa, quisquam dolores porro voluptate expedita illo doloribus
+          nulla. Corporis fugiat sed excepturi odio, odit nam officia sequi at.
+        </p>
+        <div class="btn-container">
+          <button class="primary-btn btn" onClick="document.getElementById('login').scrollIntoView();">Login</button>
+        </div>
+      </div>
+      <div class="hero-img">
+        <!-- <img src="hero-image.svg" /> -->
+      </div>
+    </section>
+	<section id="login" style="background:whitesmoke;">
+		<h2>Login Form</h2>
+    <!--Step 1 : Adding HTML-->
+    <div class="container" style="height: 100%;align-content: center;">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card" >
+          <div class="card-header" style="color: white;">
+            <h3>User Login</h3>
+            
+          </div>
+          <div class="card-body">
+            <form action="" method="POST">
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="username" name="uname" required>
+                
+              </div>
+              <div class="input-group form-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Voter ID" name="pwd" required>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Login" class="btn float-right login_btn" style="color: white;background-color: #2a224f;width: 100px;">
+              </div>
+            </form>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center links" style="color: white;">
+              Don't have an account?<a href="{{url_for('reg')}}">Sign Up</a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <span style="color: red;">{{err}}</span>
+	<span style="color: red;"></span>
+	</section>
+    <!------ Section: Features ------>
+    <section class="features" id="features">
+      <h2>Features</h2>
+      <p class="section-desc">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, optio reprehenderit est ipsum debitis molestias minima quas. Natus, sunt repudiandae nulla nostrum, recusandae quasi voluptates laboriosam iure architecto beatae non dolores. Corrupti ex quasi, veritatis exercitationem quas consequatur cum minus laudantium nostrum temporibus rerum perferendis reiciendis molestias magnam in nulla inventore. Accusamus quae mollitia eveniet neque quidem minima, reprehenderit inventore?
+      </p>
+      <div class="row">
+        <div class="column">
+          <i class="fas fa-star"></i>
+          <h3>Full-Service Management </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel veniam
+            voluptatibus nobis id perspiciatis ratione reiciendis quisquam
+            assumenda minima. Facere.
+          </p>
+        </div>
+        <div class="column">
+          <i class="fas fa-thumbs-up"></i>
+          <h3>Tracking & Tabulation </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque
+            nesciunt harum ducimus eum esse dolore debitis! Officiis autem est
+            dolor.
+          </p>
+        </div>
+        <div class="column">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Security</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            eveniet quasi aut quibusdam incidunt debitis voluptas qui enim modi
+            rem!
+          </p>
+        </div>
+      </div>
+    </section>
+  
+<!-- 
+
+    <footer class="footer">
+      <div class="row primary">
+        
+        <div class="column links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li>
+              <a href="#faq">F.A.Q</a>
+            </li>
+            <li>
+              <a href="#cookies-policy">Cookies Policy</a>
+            </li>
+            <li>
+              <a href="#terms-of-services">Terms Of Service</a>
+            </li>
+            <li>
+              <a href="#support">Support</a>
+            </li>
+            <li>
+              <a href="#careers">Careers</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column subscribe">
+          <h3>Subscribe</h3>
+          <div>
+            <input type="email" placeholder="Your email id here" />
+            <button>Subscribe</button>
+          </div>
+          <div class="social">
+            <i class="fa-brands fa-facebook-square"></i>
+            <i class="fa-brands fa-instagram-square"></i>
+            <i class="fa-brands fa-twitter-square"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row secondary">
+        <div>
+          <p>
+            <i class="fas fa-phone-alt"></i>
+          </p>
+          <p>+12 123456789</p>
+        </div>
+        <div>
+          <p><i class="fas fa-envelope"></i></p>
+          <p>mail@domain.com</p>
+        </div>
+        <div>
+          <p><i class="fas fa-map-marker-alt"></i></p>
+          <p>1234 Pearl Street</p>
+        </div>
+      </div>
+       <div class="row copyright">
+        <p>Copyright &copy; 2021 Coding Artist | All Rights Reserved</p>
+      </div> 
+    </footer>
+   -->
+    <!------ Script ------>
+    <script src="script.js"></script>
+  </body>
+</html>

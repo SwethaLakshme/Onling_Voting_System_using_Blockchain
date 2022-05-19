@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        
+/*------ Header ------*/
+header {
+  position: fixed;
+  width: 100%;
+  padding: 2rem 3rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  font-size: var(--heading-font-size-4);
+  text-decoration: none;
+}
+nav a#logo {
+  color: var(--black-shade-1);
+  font-weight: 700;
+}
+nav ul a {
+  color: white;
+}
+
+/*-- SideMenu --*/
+#ham-menu {
+  display: none;
+}
+nav ul.active {
+  left: 0;
+}
+/*-- Sticky Header --*/
+.sticky {
+  background-color: grey;
+  box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+.sticky nav ul a,
+.sticky nav a#logo,
+.sticky #ham-menu {
+  color: var(--white-shade-1);
+}
+/*-- Link Hover Effect --*/
+nav ul a:hover {
+  color: var(--white-shade-2);
+}
+.sticky nav ul a:hover {
+  color: var(--base-shade-1);
+}
+    </style>
+</head>
+<body>
+    <header style="background:#2a224f;">
+        <nav>
+          <a href="#home" id="logo" style="color:white;">Vote Securus</a>
+          <i class="fas fa-bars" id="ham-menu"></i>
+          <ul id="nav-bar">
+            <li>
+              <a href="{{url_for('login')}}">Home</a>
+            </li>
+            <li>
+              <a href="#features">Features</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+            <li>
+              <a href="{{url_for('login')}}">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    <!-- <div class="nav bg-dark">
+        <a href="{{url_for('login')}}" class="btn btn-primary">Home</a>
+    </div> -->
+    <br/>
+    <br/>
+    <form action="" method="POST">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="form-check">
+            <table>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <h1>Enter Your OTP</h1>
+                <tr>
+                    <td><input type="text" class="form-control" required name="otp" placeholder="Enter OTP"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" class="btn btn-success" value="Voting"></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+        {{dat}}
+        {{vname}}
+        {{vid}}
+        <div class="col-sm-4">
+            
+        </div>
+    </div>
+</form>
+    
+    
+</body>
+</html>

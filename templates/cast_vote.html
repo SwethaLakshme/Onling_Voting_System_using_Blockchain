@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <style type="text/css">
+        
+        /*------ Header ------*/
+        header {
+          /* position: fixed;
+          width: 100%; */
+          padding: 1rem 2rem 3rem 2rem;
+        }
+        nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        nav ul {
+          list-style: none;
+          display: flex;
+          gap: 2rem;
+        }
+        nav a {
+          font-size: var(--heading-font-size-4);
+          text-decoration: none;
+        }
+        nav a#logo {
+          color: var(--black-shade-1);
+          font-weight: 700;
+        }
+        nav ul a {
+          color: white;
+        }
+        
+        /*-- SideMenu --*/
+        #ham-menu {
+          display: none;
+        }
+        nav ul.active {
+          left: 0;
+        }
+        /*-- Sticky Header --*/
+        .sticky {
+          background-color: grey;
+          box-shadow: 0 2rem 1.5rem rgba(0, 0, 0, 0.05);
+        }
+        .sticky nav ul a,
+        .sticky nav a#logo,
+        .sticky #ham-menu {
+          color: var(--white-shade-1);
+        }
+        /*-- Link Hover Effect --*/
+        nav ul a:hover {
+          color: var(--white-shade-2);
+        }
+        .sticky nav ul a:hover {
+          color: var(--base-shade-1);
+        }
+.a {
+  display: contents;
+  border: 1px solid red;
+  background-color: lightgrey;
+  padding: 10px;
+  width: 200px;
+}
+.b {
+  border: 1px solid blue;
+  background-color: lightblue;
+  padding: 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+    <header style="background:#2a224f;">
+        <nav>
+          <a href="#home" id="logo" style="color:white;">Vote Securus</a>
+          <i class="fas fa-bars" id="ham-menu"></i>
+          <ul id="nav-bar">
+            <li>
+              <a href="{{url_for('login')}}">Home</a>
+            </li>
+            <li>
+              <a href="#features">Features</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+            <li>
+              <a href="{{url_for('login')}}">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+<h1>OTP verificaton successful</h1>
+
+<div class="b">
+Dear voter,<br/><br/>
+Your OTP has been verified successfully.<br/><br/>
+Kindly cast your vote in the link <a href="http://localhost:3000">"http://localhost:3000"</a>
+</div>
+
+
+</body>
+</html>

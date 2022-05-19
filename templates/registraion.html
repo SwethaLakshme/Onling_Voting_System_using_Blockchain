@@ -1,0 +1,77 @@
+<html>
+    <head>
+    <title> Registration</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
+</head>
+    <body  style="background-image: url('static/b3.jpg');">
+        <br>
+        <div class="nav bg-transparent">
+            <a href="{{url_for('login')}}" class="btn btn-primary">Home</a>
+        </div>
+        <div>
+        <form action="" method="POST">
+            <br/>
+            
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                        <h6>Registration</h6>
+                    <table class="table" >
+                        <tr>
+                            <td><input type="text" name="txt" class="form-control" placeholder="Username" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="passw" class="form-control" pattern="[0-9]{12}" placeholder="Enter the Aadhar ID" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="cpassw" class="form-control"pattern="[0-9]{12}" placeholder="Confirm Aadhar ID" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="phn" pattern="[0-9]{10}" class="form-control" placeholder="Enter your phone number" required></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><input type="public_key" name="public_key" class="form-control" placeholder="Enter your Account address" required></td>
+                        </tr>
+                        <tr>
+
+                            <td><input type="email" name="ema" class="form-control" placeholder="Email" required></td>
+                        </tr>
+                        <tr>
+                            
+                            <td><input type="date" name="dob" min="1900-01-01" max="2002-12-01" class="form-control" placeholder="dob" value="" required></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="register" class="btn btn-success"></td>
+                        </tr>
+                        <tr>
+                                <td><p class="text-success">{{msg}}</p></td>
+
+                        </tr>
+                        <tr>
+                            {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <script>
+                                alert("registered successfully")
+                            </script>
+                         {% endif %}
+                    {% endwith %}
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    
+                </div>
+
+            </div>
+            
+        </form>
+    </div>
+    </body>
+</html>
