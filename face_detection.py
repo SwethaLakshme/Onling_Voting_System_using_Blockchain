@@ -14,7 +14,7 @@ def face_register(voter_id):
 
     folder_count = 0  # type: int
 
-    input_path = r"C:/Users/Sri Ramajayam/Documents/e_voting_blockchain/datasets"
+    input_path = r"./datasets"
     for folders in os.listdir(input_path):
         folder_count += 1
 
@@ -56,7 +56,7 @@ def face_register(voter_id):
     else:
         size = 4
         haar_file ="haarcascade_frontalface_alt2.xml"
-        datasets = 'C:/Users/Sri Ramajayam/Documents/e_voting_blockchain/datasets'
+        datasets = './datasets'
         print('Recognizing Face Please Be in sufficient Lights...') 
         (images, lables, names, id) = ([], [], {}, 0) 
         for (subdirs, dirs, files) in os.walk(datasets): 
